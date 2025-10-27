@@ -1,0 +1,24 @@
+Helloworld.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract HelloWorld {
+    string public message;
+    string public author;
+
+    // Constructor runs once when the contract is deployed
+    constructor(string memory initialMessage, string memory initialAuthor) {
+        message = initialMessage;
+        author = initialAuthor;
+    }
+
+    // Function to update the message
+    function updateMessage(string memory newMessage) public {
+        message = newMessage;
+    }
+
+    // Function to read message and author
+    function getMessage() public view returns (string memory, string memory) {
+        return (message, author);
+    }
+}
